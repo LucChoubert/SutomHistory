@@ -1,7 +1,8 @@
 FROM ubuntu
 
 RUN apt-get update &&\
-    apt-get install -y wget python-is-python3 ssmtp
+    apt-get upgrade -y &&\
+    apt-get install -y wget vim-tiny python-is-python3 ssmtp
 
 WORKDIR /app
 
