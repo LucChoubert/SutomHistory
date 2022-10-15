@@ -43,13 +43,21 @@ fi
 while :
 do
 
+  next_run_epoch=$(date -u -d "tomorrow 01:00:00" +"%s")
+  now_epoch=$(date -u +"%s")
+  diff_epoch=$(($next_run_epoch - $now_epoch))
+
+  echo == Waiting $diff_epoch seconds until next run tomorrow at 1am UTC ==
+
+  sleep $diff_epoch
+
+  echo == Starting downloading website at $now_datetime ==
+
   now_datetime=$(date +"%y-%m-%d_%H%M%S")
 
   mkdir -p $now_datetime
 
   #cd $now_datetime
-
-  echo == Starting downloading website at $now_datetime ==
 
   log_file=/tmp/wget_$now_datetime.log
   rm -f $log_file
