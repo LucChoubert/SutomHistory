@@ -43,7 +43,7 @@ def convertToDate(iStringDate) -> date:
            month=10
         case "novembre":
            month=11
-        case "decembre":
+        case "décembre":
            month=12
         case _:
            print("ERROR - Unrecognised month {}".format(sMonth))
