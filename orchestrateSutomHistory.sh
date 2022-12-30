@@ -51,13 +51,11 @@ do
 
   sleep $diff_epoch
 
-  echo == Starting downloading website at $now_datetime ==
-
   now_datetime=$(date +"%y-%m-%d_%H%M%S")
 
-  mkdir -p $now_datetime
+  echo == Starting downloading website at $now_datetime ==
 
-  #cd $now_datetime
+  mkdir -p $now_datetime
 
   log_file=/tmp/wget_$now_datetime.log
   rm -f $log_file
